@@ -86,21 +86,14 @@
             </p>
             <ul>
                 <xsl:for-each select="//TurtleCommand[Version = 1]">
-                <b><xsl:value-of select="Name"/></b><br />
-                <div style="font-size: 0.8em;"><xsl:value-of select="Description"/></div>
+                    <b><xsl:value-of select="Name"/></b> (<xsl:value-of select="Parameter"/>)&#32;<br />
+                    <div style="font-size: 0.8em;"><xsl:value-of select="Description"/>
+                    </div>
+                    <p></p>
                 </xsl:for-each>
             </ul>
 
-            <p>
-                Some of the tools developed after the first 13 ways, include the following 
-                additional commands.
-            </p>
-            <ul>
-                <xsl:for-each select="//TurtleCommand[Version > 1]">
-                <b><xsl:value-of select="Name"/></b><br />
-                <div style="font-size: 0.8em;"><xsl:value-of select="Description"/></div>
-                </xsl:for-each>
-            </ul>
+            
 
             <h3>Predefined Scripts</h3>
             <p>
@@ -127,7 +120,7 @@
                 Scripts.  They are:
             </p>
             <ul>
-                <xsl:for-each select="//PredefinedScripts/PredefinedScript">
+                <xsl:for-each select="//PredefinedScripts/PredefinedScript[Version = 1]">
                 <li>
                     <h5>Drawing a <xsl:value-of select="Name"/></h5>
                     <ol>
@@ -138,21 +131,59 @@
                 </li>
                 </xsl:for-each>
            </ul>
+
+           <h4>Future Functions</h4>
+           <p>
+            Future "ways" beyond the original 13 sometimes extend or even create new behavior than originally supported.  For example,
+            the following additional shapes could be supported by each of "the ways".
+           </p>
+           <ul>
+                <xsl:for-each select="//PredefinedScripts/PredefinedScript[Version > 1]">
+                <li>
+                    <h5>Drawing a <xsl:value-of select="Name"/></h5>
+                    <ol>
+                        <xsl:for-each select="//PredefinedScriptStep[PredefinedScript = current()/Name]">
+                            <li><b><xsl:value-of select="Command" /></b> <xsl:value-of select="Argument" /></li>
+                        </xsl:for-each>
+                    </ol>
+                </li>
+                </xsl:for-each>
+           </ul>
+
+           <h4>Future Commands</h4>
+
+           <p>
+                Some of the tools developed after the first 13 ways, also may have (or introduce) access to the 
+                following additional "turtle" commands.
+            </p>
+            <ul>
+                <xsl:for-each select="//TurtleCommand[Version > 1]">
+                <b><xsl:value-of select="Name"/></b> (<xsl:value-of select="Parameter"/>)&#32;<br />
+                <div style="font-size: 0.8em;"><xsl:value-of select="Description"/> - <small>suggested for v <xsl:value-of select="Version"/>+</small>
+                </div>
+                </xsl:for-each>
+            </ul>
            <h3>The Ways</h3>
             <p>
                 The purpose of this code is demonstrate different ways to solve the same problem. 
-                Variations on a theme.  These <xsl:value-of select="count(//WayOfLookingAtATurtle)" /> are listed below.
+                Variations on a theme - listed below.
             </p>
             <xsl:for-each select="//WayOfLookingAtATurtle">
+            <hr />
                 <div style="font-size: 0.8em; margin-top: 1em;">
                     <h5><xsl:value-of select="DisplayWayNumber"/> - <xsl:value-of select="Name"/></h5>
                     <div style="whitespace: pre-wrap">
-                        <xsl:value-of select="Description"/>
+                        <i><xsl:value-of select="Description"/></i>
                     </div>
-                    <div style="whitespace: pre-wrap">
-                        <xsl:value-of select="Notes"/>
-                    </div>
+                    <p></p>
+                    <pre><xsl:value-of select="Notes"/></pre>
                 </div>
+                <p>
+                <b>Pros</b> ... coming soon.
+                </p>
+                <p>
+                <b>Cons</b> ... coming soon.
+                </p>
             </xsl:for-each>
         </div>
     </body>

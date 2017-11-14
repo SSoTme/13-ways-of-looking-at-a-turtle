@@ -11,7 +11,7 @@
                   <xs:sequence>
                     <xs:element name="WayNumber" type="xs:string" />
                     <xs:element name="DisplayWayNumber" type="xs:string" />
-                    <xs:element name="MainFileName" type="xs:string" />
+                    <xs:element minOccurs="0" name="MainFileName" type="xs:string" />
                     <xs:element name="Name" type="xs:string" />
                     <xs:element name="Description" type="xs:string" />
                     <xs:element name="Notes" type="xs:string" />

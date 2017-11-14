@@ -32,6 +32,62 @@ public class Turtle
     public PenState currentPenState = initialPenState;
     private log log;
 
+    public class TurtleEventArgs : EventArgs
+    {
+        public TurtleEventArgs(Turtle turtle, float distance = 0, float angle = 0)
+        {
+            this.Turtle = turtle;
+            this.Distance = distance;
+            this.Angle = angle;
+        }
+        public TurtleEventArgs(Turtle turtle, PointF origin, float distance = 0, float angle = 0)
+            : this(turtle, distance, angle)
+        {
+            this.Origin = origin;
+        }
+
+        public Turtle Turtle { get; private set; }
+        public float Distance { get; }
+        public float Angle { get; }
+        public PenColor PrevColor { get; set; }
+        public PointF Origin { get; set; }
+    }
+
+    public static event EventHandler<TurtleEventArgs> TrackMove;
+    public static void FireMove(Turtle turtle, PointF origin)
+    {
+        if (!ReferenceEquals(TrackMove, null)) TrackMove(turtle, new TurtleEventArgs(turtle, origin));
+    }
+
+    public static event EventHandler<TurtleEventArgs> TrackTurn;
+    public static void FireTurn(Turtle turtle, float angle)
+    {
+        if (!ReferenceEquals(TrackTurn, null)) TrackTurn(turtle, new TurtleEventArgs(turtle, angle: angle));
+    }
+
+    public static event EventHandler<TurtleEventArgs> TrackPenUp;
+    public static void FireTrackPenUp(Turtle turtle)
+    {
+        if (!ReferenceEquals(TrackPenUp, null)) TrackPenUp(turtle, new TurtleEventArgs(turtle));
+    }
+
+    public static event EventHandler<TurtleEventArgs> TrackPenDown;
+    public static void FireTrackPenDown(Turtle turtle)
+    {
+        if (!ReferenceEquals(TrackPenDown, null)) TrackPenDown(turtle, new TurtleEventArgs(turtle));
+    }
+
+    public static event EventHandler<TurtleEventArgs> TrackSetColor;
+    public static void FireTrackSetColor(Turtle turtle, PenColor prevColor)
+    {
+        if (!ReferenceEquals(TrackSetColor, null)) TrackSetColor(turtle, new TurtleEventArgs(turtle)
+        {
+            PrevColor = prevColor
+        });
+    }
+
+
+
     public Turtle(log log)
     {
         this.log = log;
@@ -41,14 +97,15 @@ public class Turtle
     {
         log("Move {0:#.#}", distance);
         // calculate new position 
+        var prevPosition = currentPosition;
         var newPosition = currentPosition.calcNewPosition(currentAngle, distance);
         // draw line if needed
         if (currentPenState == PenState.Down)
         {
-            dummyDrawLine(log, currentPosition, newPosition, currentColor);
-
             // update the state
             currentPosition = newPosition;
+            dummyDrawLine(log, prevPosition, newPosition, currentColor);
+            FireMove(this, prevPosition);
         }
     }
 
@@ -78,7 +135,22 @@ public class Turtle
         throw new NotImplementedException();
     }
 
+    internal void DrawLine(float distance)
+    {
+        throw new NotImplementedException();
+    }
+
     internal void DrawCircle(float radius)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void TurnSide(int sides)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void Repeat(int repeat)
     {
         throw new NotImplementedException();
     }
@@ -87,5 +159,10 @@ public class Turtle
     {
         log("SetColor {0}", color);
         currentColor = color;
+    }
+
+    internal void Exec(string command)
+    {
+        throw new NotImplementedException();
     }
 }

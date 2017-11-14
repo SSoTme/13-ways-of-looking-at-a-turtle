@@ -37,28 +37,26 @@ The kinds of data that were moved over to the SSoT are:
 
 The "basic" Turtle is able to perform these commands. 
 
-**Move**  
-  Moves the specified distance in whatever direction 'the turtle' is currently pointing.  
-  **Turn**  
-  Turn the specified degrees from the current position  
-  **PenUp**  
-  Lift the pen off of the paper  
-  **PenDown**  
-  Put the pen down on the paper  
-  **SetColor**  
-  Set the color of the pen  
-  Some of the tools developed after the first 13 ways, include the following additional commands. 
-
-**DrawPolygon**  
-  Turn the number of degrees based on the number of sides passed in  
-  **DrawLine**  
-  Put the pen down, move distance and the left the pen up  
-  **TurnSide**  
-  Turn the number of degrees based on the number of sides  
-  **Repeat**  
-  Repeats the previous N commands the specified number of times  
-  **Exec**  
-  Executes the given command  
+**Move** (Distance)   
+  Moves the specified distance in whatever direction 'the turtle' is currently pointing.   
+  
+  
+  **Turn** (Degrees)   
+  Turn the specified degrees from the current position   
+  
+  
+  **PenUp** ()   
+  Lift the pen off of the paper   
+  
+  
+  **PenDown** ()   
+  Put the pen down on the paper   
+  
+  
+  **SetColor** (Color)   
+  Set the color of the pen   
+  
+  
   
 ### Predefined Scripts
 
@@ -105,6 +103,11 @@ At this point in time, the SSoT for this project includes 3 Predefined Scripts. 
       16. **SetColor** Blue
       17. **Turn** 45
       18. **Move** 100
+#### Future Functions
+
+Future "ways" beyond the original 13 sometimes extend or even create new behavior than originally supported. For example, the following additional shapes could be supported by each of "the ways". 
+
+
   * ##### Drawing a Box
     
     
@@ -116,98 +119,327 @@ At this point in time, the SSoT for this project includes 3 Predefined Scripts. 
       6. **Turn** 90
       7. **Move** 100
       8. **Turn** 90
+#### Future Commands
+
+Some of the tools developed after the first 13 ways, also may have (or introduce) access to the following additional "turtle" commands. 
+
+**DrawPolygon** (Sides)   
+  Turn the number of degrees based on the number of sides passed in - suggested for v 2+  
+  **DrawLine** (Distance)   
+  Put the pen down, move distance and the left the pen up - suggested for v 3+  
+  **TurnSide** (Sides)   
+  Turn the number of degrees based on the number of sides - suggested for v 3+  
+  **Repeat** (Repeat)   
+  Repeats the previous N commands the specified number of times - suggested for v 3+  
+  **Exec** (Command)   
+  Executes the given command - suggested for v 3+  
+  
 ### The Ways
 
-The purpose of this code is demonstrate different ways to solve the same problem. Variations on a theme. These 18 are listed below. 
+The purpose of this code is demonstrate different ways to solve the same problem. Variations on a theme - listed below. 
 
+
+--------
 ##### Way 01 - OOTurtle
 
-Simple OO -- a class with mutable state   
-In this design, a simple OO class represents the turtle, and the client talks to the turtle directly.   
+_Simple OO -- a class with mutable state_  
+
+
+
+```
+In this design, a simple OO class represents the turtle, and the client talks to the turtle directly.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 02 - FPTurtle
 
-Simple FP - a module of functions with immutable state   
-In this design, the turtle state is immutable. A module contains functions that return a new turtle state, and the client uses these turtle functions directly. The client must keep track of the current state and pass it into the next function call.   
+_Simple FP - a module of functions with immutable state_  
+
+
+
+```
+In this design, the turtle state is immutable. A module contains functions that return a new turtle state, and the client uses these turtle functions directly. The client must keep track of the current state and pass it into the next function call.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 03 - Api_OO_Core
 
-API (OO Approach) -- OO API calling stateful core class   
-In this design, an API layer communicates with a turtle class and the client talks to the API layer. The input to the API are strings, and so the API validates the input and returns a Result containing any errors.   
+_API (OO Approach) -- OO API calling stateful core class_  
+
+
+
+```
+In this design, an API layer communicates with a turtle class and the client talks to the API layer. The input to the API are strings, and so the API validates the input and returns a Result containing any errors.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 04 - Api_FP_Core
 
-API (OO/FP hybrid approach) -- OO API calling stateless functions   
-In this design, an API layer communicates with pure turtle functions and the client talks to the API layer. The API layer manages the state (rather than the client) by storing a mutable turtle state. *This approach has been named \   
+_API (OO/FP hybrid approach) -- OO API calling stateless functions_  
+
+
+
+```
+In this design, an API layer communicates with pure turtle functions and the client talks to the API layer. The API layer manages the state (rather than the client) by storing a mutable turtle state. *This approach has been named \
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 05 - TurtleAgent
 
-API (hybrid approach) -- OO API posting messages to an Agent   
-In this design, an API layer communicates with a TurtleAgent and the client talks to the API layer. Because the Agent has a message queue, all possible commands are managed with a single discriminated union type (`TurtleCommand`). There are no mutables anywhere. The Agent manages the turtle state by storing the current state as a parameter in the recursive message processing loop.   
+_API (hybrid approach) -- OO API posting messages to an Agent_  
+
+
+
+```
+In this design, an API layer communicates with a TurtleAgent and the client talks to the API layer. Because the Agent has a message queue, all possible commands are managed with a single discriminated union type (`TurtleCommand`). There are no mutables anywhere. The Agent manages the turtle state by storing the current state as a parameter in the recursive message processing loop.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 06 - DependencyInjection_Interface1
 
-Dependency injection (using interfaces) -- v1: OO interface   
-In this design, an API layer communicates with a Turtle Interface (OO style) or a record of TurtleFunctions (FP style) rather than directly with a turtle. The client injects a specific turtle implementation via the API's constructor.   
+_Dependency injection (using interfaces) -- v1: OO interface_  
+
+
+
+```
+In this design, an API layer communicates with a Turtle Interface (OO style) or a record of TurtleFunctions (FP style) rather than directly with a turtle. The client injects a specific turtle implementation via the API's constructor.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 06 - DependencyInjection_Interface2
 
-Dependency injection (using interfaces) - v2: records of functions   
-In this design, an API layer communicates with a Turtle Interface (OO style) or a record of TurtleFunctions (FP style) rather than directly with a turtle. The client injects a specific turtle implementation via the API's constructor.   
+_Dependency injection (using interfaces) - v2: records of functions_  
+
+
+
+```
+In this design, an API layer communicates with a Turtle Interface (OO style) or a record of TurtleFunctions (FP style) rather than directly with a turtle. The client injects a specific turtle implementation via the API's constructor.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 07 - DependencyInjection_Functions1
 
-Dependency injection using functions (v1: pass in all functions)   
-In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call. These functions are typically partially applied so that the call site is decoupled from the `injection` No interface is passed to the constructor.   
+_Dependency injection using functions (v1: pass in all functions)_  
+
+
+
+```
+In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call. These functions are typically partially applied so that the call site is decoupled from the `injection` No interface is passed to the constructor.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 07 - DependencyInjection_Functions2
 
-Dependency injection using functions (v2: pass in a single function)   
-In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call. These functions are typically partially applied so that the call site is decoupled from the `injection` No interface is passed to the constructor.   
+_Dependency injection using functions (v2: pass in a single function)_  
+
+
+
+```
+In this design, an API layer communicates via one or more functions that are passed in as parameters to the API call. These functions are typically partially applied so that the call site is decoupled from the `injection` No interface is passed to the constructor.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 08 - StateMonad
 
-Batch oriented -- Using a state monad (computation expression)   
-In this design, the client uses the FP Turtle functions directly. As before, the client must keep track of the current state and pass it into the next function call, but this time the state is kept out of sight by using a State monad (called `turtle` computation expression here) As a result, there are no mutables anywhere.   
+_Batch oriented -- Using a state monad (computation expression)_  
+
+
+
+```
+In this design, the client uses the FP Turtle functions directly. As before, the client must keep track of the current state and pass it into the next function call, but this time the state is kept out of sight by using a State monad (called `turtle` computation expression here) As a result, there are no mutables anywhere.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 09 - BatchCommands
 
-Batch oriented -- Using a list of commands   
-In this design, the client creates a list of `Command`s that will be intepreted later. These commands are then run in sequence using the Turtle library functions. This approach means that there is no state that needs to be persisted between calls by the client.   
+_Batch oriented -- Using a list of commands_  
+
+
+
+```
+In this design, the client creates a list of `Command`s that will be intepreted later. These commands are then run in sequence using the Turtle library functions. This approach means that there is no state that needs to be persisted between calls by the client.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 10 - EventSourcing
 
-Event sourcing -- Building state from a list of past events   
-In this design, the client sends a `Command` to a `CommandHandler`. The CommandHandler converts that to a list of events and stores them in an `EventStore`. In order to know how to process a Command, the CommandHandler builds the current state from scratch using the past events associated with that particular turtle. Neither the client nor the command handler needs to track state. Only the EventStore is mutable.   
+_Event sourcing -- Building state from a list of past events_  
+
+
+
+```
+In this design, the client sends a `Command` to a `CommandHandler`. The CommandHandler converts that to a list of events and stores them in an `EventStore`. In order to know how to process a Command, the CommandHandler builds the current state from scratch using the past events associated with that particular turtle. Neither the client nor the command handler needs to track state. Only the EventStore is mutable.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 11 - FRP
 
-Functional Retroactive Programming -- Business logic is based on reacting to earlier events   
-In this design, the `write-side` follows the same pattern as the event-sourcing example. A client sends a Command to a CommandHandler, which converts that to a list of events and stores them in an EventStore. However in this design, the CommandHandler only updates state and does NOT do any complex business logic. The domain logic is done on the \   
+_Functional Retroactive Programming -- Business logic is based on reacting to earlier events_  
+
+
+
+```
+In this design, the `write-side` follows the same pattern as the event-sourcing example. A client sends a Command to a CommandHandler, which converts that to a list of events and stores them in an EventStore. However in this design, the CommandHandler only updates state and does NOT do any complex business logic. The domain logic is done on the \
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 12 - BranchingOnResponse
 
-Monadic control flow -- Making decisions in the turtle computation expression   
-In this design, the turtle can reply to certain commands with errors. The code demonstrates how the client can make decisions inside the turtle computation expression while the state is being passed around behind the scenes.   
+_Monadic control flow -- Making decisions in the turtle computation expression_  
+
+
+
+```
+In this design, the turtle can reply to certain commands with errors. The code demonstrates how the client can make decisions inside the turtle computation expression while the state is being passed around behind the scenes.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 13 - InterpreterV1
 
-The interpreter pattern   
-In this design, the client builds a data structure (`TurtleProgram`) that represents the instructions. This Turtle Program can then interpreted later in various ways   
+_The interpreter pattern_  
+
+
+
+```
+In this design, the client builds a data structure (`TurtleProgram`) that represents the instructions. This Turtle Program can then interpreted later in various ways
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 13 - InterpreterV2
 
-The interpreter pattern   
-In this design, the client builds a data structure (`TurtleProgram`) that represents the instructions. This Turtle Program can then interpreted later in various ways   
+_The interpreter pattern_  
+
+
+
+```
+In this design, the client builds a data structure (`TurtleProgram`) that represents the instructions. This Turtle Program can then interpreted later in various ways
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 14 - AdtTurtle
 
-Abstract Data Turtle - a private type with an associated module of functions   
-In this design, the details of the turtle structure is hidden from the client, so the it could be changed without breaking any code. See https://www.reddit.com/r/fsharp/comments/36s0zr/structuring_f_programs_with_abstract_data_types/? for more on ADTs in F#.   
+_Abstract Data Turtle - a private type with an associated module of functions_  
+
+
+
+```
+In this design, the details of the turtle structure is hidden from the client, so the it could be changed without breaking any code. See https://www.reddit.com/r/fsharp/comments/36s0zr/structuring_f_programs_with_abstract_data_types/? for more on ADTs in F#.
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
 ##### Way 15 - CapabilityBasedTurtle
 
-API with capabilities   
-In this design, the turtle exposes a list of functions (capabilities) after each action. These are the ONLY actions available to the client More on capability-based security at http://fsharpforfunandprofit.com/posts/capability-based-security/   
+_API with capabilities_  
+
+
+
+```
+In this design, the turtle exposes a list of functions (capabilities) after each action. These are the ONLY actions available to the client More on capability-based security at http://fsharpforfunandprofit.com/posts/capability-based-security/
+```
   
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
+
+--------
+##### Way 16 - TurtleCanvas
+
+_Turtle Canvas_  
+
+
+
+```
+This is a design which monitors the main `turtle` - and then runns the another turtle's tests. Each test is saved to a .png with the path traced by the turtle.
+```
+  
+**Pros** ... coming soon. 
+
+**Cons** ... coming soon. 
+
   

@@ -206,6 +206,15 @@ These are the ONLY actions available to the client
 
 More on capability-based security at http://fsharpforfunandprofit.com/posts/capability-based-security/</Notes>
   </WayOfLookingAtATurtle>
+  <WayOfLookingAtATurtle>
+    <WayNumber>W16</WayNumber>
+    <DisplayWayNumber>Way 16</DisplayWayNumber>
+    <Name>TurtleCanvas</Name>
+    <Description>Turtle Canvas</Description>
+    <Notes>This is a design which monitors the main `turtle` - and then runns the another turtle's tests.  
+
+Each test is saved to a .png with the path traced by the turtle.</Notes>
+  </WayOfLookingAtATurtle>
 </WayOfLookingAtATurtles><TurtleAttributes>
   <TurtleAttribute>
     <Name>Position</Name>
