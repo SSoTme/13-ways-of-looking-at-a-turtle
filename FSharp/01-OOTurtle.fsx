@@ -12,17 +12,10 @@ and the client talks to the turtle directly.
 
 ====================================== *)
 
-#load "Common.fsx"
+#load "DerivedBaseClasses/W01Base.fsx"
 
-open System
 open Common
-
-// ======================================
-// OO Turtle
-// ======================================
-
-// see code in this file
-#load "OOTurtleLib.fsx"
+open W01Base
 
 // ======================================
 // OO Turtle Client
@@ -31,46 +24,20 @@ open Common
 module OOTurtleClient = 
     open OOTurtleLib
 
+
     /// Function to log a message
     let log message =
         printfn "%s" message 
 
     let drawTriangle() = 
-        let turtle = Turtle(log)
-        turtle.Move 100.0 
-        turtle.Turn 120.0<Degrees>
-        turtle.Move 100.0 
-        turtle.Turn 120.0<Degrees>
-        turtle.Move 100.0
-        turtle.Turn 120.0<Degrees>
-        // back home at (0,0) with angle 0
+        W01Base.drawTriangle()
             
     let drawThreeLines() = 
-        let turtle = Turtle(log)
-        // draw black line 
-        turtle.PenDown()
-        turtle.SetColor Black
-        turtle.Move 100.0 
-        // move without drawing
-        turtle.PenUp()
-        turtle.Turn 90.0<Degrees>
-        turtle.Move 100.0 
-        turtle.Turn 90.0<Degrees>
-        // draw red line 
-        turtle.PenDown()
-        turtle.SetColor Red
-        turtle.Move 100.0
-        // move without drawing
-        turtle.PenUp()
-        turtle.Turn 90.0<Degrees>
-        turtle.Move 100.0 
-        turtle.Turn 90.0<Degrees>
-        // back home at (0,0) with angle 0
-        // draw diagonal blue line 
-        turtle.PenDown()
-        turtle.SetColor Blue
-        turtle.Turn 45.0<Degrees>
-        turtle.Move 100.0
+        W01Base.drawThreeLines()
+
+    let drawBox() = 
+        W01Base.drawBox()
+
 
     let drawPolygon n = 
         let angle = 180.0 - (360.0/float n) 
@@ -90,9 +57,8 @@ module OOTurtleClient =
 // OO Turtle tests
 // ======================================
 
-(*
 OOTurtleClient.drawTriangle() 
 OOTurtleClient.drawThreeLines() 
+OOTurtleClient.drawBox() 
 OOTurtleClient.drawPolygon 4 
-*)
 

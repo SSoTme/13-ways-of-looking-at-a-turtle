@@ -5,13 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>3ded8669-07bb-4e9f-9764-f393d3a5549d</ProjectGuid>
+    <ProjectGuid>{fdf8bed4-07ba-42e7-80ee-f9ccb225fe65}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>13-ways-of-looking-at-a-turtle</RootNamespace>
     <AssemblyName>13-ways-of-looking-at-a-turtle</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <Name>13-ways-of-looking-at-a-turtle</Name>
-    <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,6 +41,19 @@
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DerivedBaseClasses\W01Base.fsx" />
+    <None Include="DerivedBaseClasses\W02Base.fsx" />
+    <None Include="DerivedBaseClasses\W03Base.fsx" />
+    <None Include="DerivedBaseClasses\W04Base.fsx" />
+    <None Include="DerivedBaseClasses\W05Base.fsx" />
+    <None Include="DerivedBaseClasses\W06Base.fsx" />
+    <None Include="DerivedBaseClasses\W07Base.fsx" />
+    <None Include="DerivedBaseClasses\W08Base.fsx" />
+    <None Include="DerivedBaseClasses\W09Base.fsx" />
+    <None Include="DerivedBaseClasses\W10Base.fsx" />
+    <None Include="DerivedBaseClasses\W11Base.fsx" />
+    <None Include="DerivedBaseClasses\W12Base.fsx" />
+    <None Include="DerivedBaseClasses\W13Base.fsx" />
     <None Include="01-OOTurtle.fsx" />
     <None Include="02-FPTurtle.fsx" />
     <None Include="03-Api_OO_Core.fsx" />

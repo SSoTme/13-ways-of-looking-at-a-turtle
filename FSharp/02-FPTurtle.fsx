@@ -15,7 +15,7 @@ The client must keep track of the current state and pass it into the next functi
 ====================================== *)
 
 
-#load "Common.fsx"
+#load "DerivedBaseClasses/W02Base.fsx"
 
 open System
 open Common
@@ -46,41 +46,13 @@ module FPTurtleClient =
     let setColor = Turtle.setColor log
 
     let drawTriangle() = 
-        Turtle.initialTurtleState
-        |> move 100.0 
-        |> turn 120.0<Degrees>
-        |> move 100.0 
-        |> turn 120.0<Degrees>
-        |> move 100.0 
-        |> turn 120.0<Degrees>
-        // back home at (0,0) with angle 0
+        W02Base.W02Base.drawTriangle()
             
     let drawThreeLines() = 
-        Turtle.initialTurtleState
-        // draw black line 
-        |> penDown
-        |> setColor Black
-        |> move 100.0 
-        // move without drawing
-        |> penUp
-        |> turn 90.0<Degrees>
-        |> move 100.0 
-        |> turn 90.0<Degrees>
-        // draw red line 
-        |> penDown
-        |> setColor Red
-        |> move 100.0
-        // move without drawing
-        |> penUp
-        |> turn 90.0<Degrees>
-        |> move 100.0 
-        |> turn 90.0<Degrees>
-        // back home at (0,0) with angle 0
-        // draw diagonal blue line 
-        |> penDown
-        |> setColor Blue
-        |> turn 45.0<Degrees>
-        |> move 100.0
+        W02Base.W02Base.drawThreeLines()
+
+    let drawBox() =
+        W02Base.W02Base.drawBox()
 
     let drawPolygon n = 
         let angle = 180.0 - (360.0/float n) 
@@ -100,10 +72,8 @@ module FPTurtleClient =
 // FP Turtle tests
 // ======================================
 
-(*
 FPTurtleClient.drawTriangle() |> ignore
 FPTurtleClient.drawThreeLines() |> ignore
 FPTurtleClient.drawPolygon 4 |> ignore
-*)
 
 
