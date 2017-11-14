@@ -149,6 +149,9 @@
                     <div style="whitespace: pre-wrap">
                         <xsl:value-of select="Description"/>
                     </div>
+                    <div style="whitespace: pre-wrap">
+                        <xsl:value-of select="Notes"/>
+                    </div>
                 </div>
             </xsl:for-each>
         </div>
