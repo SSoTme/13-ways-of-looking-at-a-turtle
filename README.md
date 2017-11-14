@@ -20,8 +20,11 @@ The code in this branch have been created by following the following steps in an
   3. Create a tool (or use an existing tool) which can write that kind of code (for the full set).
   4. Update the "hand code" to call the "derived" version fo the code
   5. Delete the hand code version
-  6. Rinse and RepeatIncluded next are examples of the kind of information which is usually embeeded in "source code" directly, but which are much better described outside of the code. Databases and Spreadsheets work well for SSoT - but there are many options for gathering SSoT data from. 
+  6. Rinse and Repeat
 
+Included next are examples of the kind of information which is usually embeeded in "source code" directly, but which are much better described outside of the code. Databases and Spreadsheets work well for SSoT - but there are many options for gathering SSoT data from. 
+
+  
 The kinds of data that were moved over to the SSoT are: 
 
 
@@ -64,8 +67,11 @@ The original article uses these simple commands to demonstrate 13 ways of lookin
 
   1. A Triangle
   2. Three Lines
-  3. A PolygonIn Designing the single source of truth for this project, I call the first two examples "PredefinedScript". This is a script which only uses the basic Turtle Commands to complete a certain sequence of steps (a "PredefinedScriptStep"). 
+  3. A Polygon
 
+In Designing the single source of truth for this project, I call the first two examples "PredefinedScript". This is a script which only uses the basic Turtle Commands to complete a certain sequence of steps (a "PredefinedScriptStep"). 
+
+  
 At this point in time, the SSoT for this project includes 3 Predefined Scripts. They are: 
 
 

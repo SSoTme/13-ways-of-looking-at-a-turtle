@@ -61,12 +61,15 @@
                 <li>Delete the hand code version</li>
                 <li>Rinse and Repeat</li>
             </ol>
+            <p></p>
+            <div>
             <p>
                 Included next are examples of the kind of information which is usually embeeded in
                 "source code" directly, but which are much better described outside of the code.
                 Databases and Spreadsheets work well for SSoT - but there are many options for
                 gathering SSoT data from. 
             </p>
+            </div>
             <p>
                 The kinds of data that were moved over to the SSoT are:
             </p>
@@ -110,11 +113,15 @@
                 <li>Three Lines</li>
                 <li>A Polygon</li>
             </ol>
+            <p></p>
+            <div>
+
             <p>
                 In Designing the single source of truth for this project, I call the first
                 two examples "PredefinedScript".  This is a script which only uses the basic
                 Turtle Commands to complete a certain sequence of steps (a "PredefinedScriptStep").
             </p>
+            </div>
             <p>
                 At this point in time, the SSoT for this project includes <xsl:value-of select="count(//PredefinedScripts/PredefinedScript)"/> Predefined
                 Scripts.  They are:
