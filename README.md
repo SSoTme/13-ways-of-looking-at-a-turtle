@@ -72,11 +72,11 @@ At this point in time, the SSoT for this project includes 3 Predefined Scripts. 
   * ##### Drawing a Triangle
     
     
-      1. **Move** 100
+      1. **Move** 275
       2. **Turn** 120
-      3. **Move** 100
+      3. **Move** 275
       4. **Turn** 120
-      5. **Move** 100
+      5. **Move** 275
       6. **Turn** 120
   * ##### Drawing a ThreeLines
     

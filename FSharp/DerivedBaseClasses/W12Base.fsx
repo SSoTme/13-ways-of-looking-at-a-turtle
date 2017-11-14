@@ -41,11 +41,11 @@ module W12Base =
         printfn "PRINTING Triangle!"
         // let turtle = Turtle(log)
         
-        // turtle.Move 100.0
+        // turtle.Move 275.0
         // turtle.Turn 120.0<Degrees>
-        // turtle.Move 100.0
+        // turtle.Move 275.0
         // turtle.Turn 120.0<Degrees>
-        // turtle.Move 100.0
+        // turtle.Move 275.0
         // turtle.Turn 120.0<Degrees>
     
     

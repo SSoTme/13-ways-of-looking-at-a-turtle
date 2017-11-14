@@ -90,11 +90,11 @@ namespace CSharpLib1.BaseClasses
         {
             this.log("PRINTING Triangle!");
             TurtleExtensions.CreateTurtle(log)
-                .DoMove(100)
+                .DoMove(275)
                 .DoTurn(120)
-                .DoMove(100)
+                .DoMove(275)
                 .DoTurn(120)
-                .DoMove(100)
+                .DoMove(275)
                 .DoTurn(120);
         }
         

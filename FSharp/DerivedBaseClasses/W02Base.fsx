@@ -48,11 +48,11 @@ module W02Base =
         printfn "PRINTING Triangle!"
         
         Turtle.initialTurtleState
-        |> move 100.0
+        |> move 275.0
         |> turn 120.0<Degrees>
-        |> move 100.0
+        |> move 275.0
         |> turn 120.0<Degrees>
-        |> move 100.0
+        |> move 275.0
         |> turn 120.0<Degrees>
     
     

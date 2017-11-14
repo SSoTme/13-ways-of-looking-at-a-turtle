@@ -34,11 +34,11 @@ namespace CSharpLib1.BaseClasses
             var api = new ApiTurtle(log);
 
             
-            api.Exec("Move 100");
+            api.Exec("Move 275");
             api.Exec("Turn 120");
-            api.Exec("Move 100");
+            api.Exec("Move 275");
             api.Exec("Turn 120");
-            api.Exec("Move 100");
+            api.Exec("Move 275");
             api.Exec("Turn 120");
         }
         

@@ -383,7 +383,7 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
   <PredefinedScriptStep>
     <PredefinedScript>Triangle</PredefinedScript>
     <Command>Move</Command>
-    <Argument>100</Argument>
+    <Argument>275</Argument>
     <ArgumentType>Distance</ArgumentType>
   </PredefinedScriptStep>
   <PredefinedScriptStep>
@@ -395,7 +395,7 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
   <PredefinedScriptStep>
     <PredefinedScript>Triangle</PredefinedScript>
     <Command>Move</Command>
-    <Argument>100</Argument>
+    <Argument>275</Argument>
     <ArgumentType>Distance</ArgumentType>
   </PredefinedScriptStep>
   <PredefinedScriptStep>
@@ -407,7 +407,7 @@ More on capability-based security at http://fsharpforfunandprofit.com/posts/capa
   <PredefinedScriptStep>
     <PredefinedScript>Triangle</PredefinedScript>
     <Command>Move</Command>
-    <Argument>100</Argument>
+    <Argument>275</Argument>
     <ArgumentType>Distance</ArgumentType>
   </PredefinedScriptStep>
   <PredefinedScriptStep>

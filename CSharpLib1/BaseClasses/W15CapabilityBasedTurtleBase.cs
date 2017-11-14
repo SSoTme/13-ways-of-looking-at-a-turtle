@@ -33,11 +33,11 @@ namespace CSharpLib1.BaseClasses
             var turtle = new Turtle(log);
 
             
-            turtle.Move(100);
+            turtle.Move(275);
             turtle.Turn(120);
-            turtle.Move(100);
+            turtle.Move(275);
             turtle.Turn(120);
-            turtle.Move(100);
+            turtle.Move(275);
             turtle.Turn(120);
         }
         
